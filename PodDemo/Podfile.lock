@@ -1,0 +1,21 @@
+PODS:
+  - BOCheckoutSDKiOS (0.0.1-beta)
+
+DEPENDENCIES:
+  - BOCheckoutSDKiOS (from `https://github.com/bambora/checkout-sdk-ios.git`)
+
+EXTERNAL SOURCES:
+  BOCheckoutSDKiOS:
+    :git: https://github.com/bambora/checkout-sdk-ios.git
+
+CHECKOUT OPTIONS:
+  BOCheckoutSDKiOS:
+    :commit: 35281dfc717a496f782be87f4958694cf3269675
+    :git: https://github.com/bambora/checkout-sdk-ios.git
+
+SPEC CHECKSUMS:
+  BOCheckoutSDKiOS: b4d1c564c97859ffbbe8addacc8ee482cb7a6323
+
+PODFILE CHECKSUM: 9c81ef8d2090926a97e1129fb5f95bbc6a8650b3
+
+COCOAPODS: 1.5.0
