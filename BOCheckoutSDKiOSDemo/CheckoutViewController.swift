@@ -80,7 +80,9 @@ class CheckoutViewController: UIViewController {
         }
     }
     func createCheckoutSessionRequest() -> Dictionary<String, Any> {
-        let checkoutOrder = ["id": "Order123",
+        let orderId = arc4random_uniform(999999)
+        
+        let checkoutOrder = ["id": String(orderId),
                              "amount": 375,
                              "currency": "EUR"] as [String : Any]
         let checkoutUrl = ["accept": "https://checkout-sdk-demo.bambora.com/accept",

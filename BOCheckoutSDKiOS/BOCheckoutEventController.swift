@@ -57,8 +57,7 @@ public class BOCheckoutEventController: NSObject, WKScriptMessageHandler {
                 if let payload: String = messageBody["payload"] as? String {
                     eventData.payload = payload
                 }
-                print(message.body)
-                //For subscribing to a specefik event
+                //For subscribing to a specific event
                 registredEvents[eventData.eventType]?.raise(eventData: eventData)
                 //For subscribing to ANY event
                 registredEvents["*"]?.raise(eventData: eventData)
