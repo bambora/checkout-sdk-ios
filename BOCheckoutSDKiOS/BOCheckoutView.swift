@@ -37,6 +37,11 @@ public class BOCheckoutView: UIView{
         setupWebView()
     }
     
+    public override func layoutSubviews() {
+        super.layoutSubviews()
+        webView.frame = self.bounds
+    }
+    
     private func setupWebView(){
         eventController = BOCheckoutEventController()
         let webConfiguration = WKWebViewConfiguration()
@@ -58,11 +63,22 @@ public class BOCheckoutView: UIView{
     }
     
     public func initialize(checkoutToken:String) {
-        let checkoutUrl = URL(string: "https://v1.checkout.bambora.com/" + checkoutToken + "?ui=inline")
+        let versionHash = getSDKVersionHash()
+        let checkoutUrl = URL(string: "https://v1.checkout.bambora.com/" + checkoutToken + "?ui=inline#" + versionHash)
         let myRequest = URLRequest(url: checkoutUrl!)
         webView.load(myRequest)
     }
+    
+    private func getSDKVersionHash() -> String {
+        let sdkVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
+        let versionString = "CheckoutSDKiOS/" + sdkVersion!
+        let data = (versionString).data(using: String.Encoding.utf8)
+        let result = data!.base64EncodedString(options: NSData.Base64EncodingOptions(rawValue: 0))
+        return result
+    }
 
+    
+    
     public func on(eventType: String, eventHandler:@escaping (BOCheckoutEventData) -> Void) {
        eventController.on(eventType: eventType.lowercased(), eventHandler: eventHandler)
     }
