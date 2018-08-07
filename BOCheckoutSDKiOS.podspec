@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name             = 'BOCheckoutSDKiOS'
-  spec.version          = '0.0.3'
+  spec.version          = '1.0.0'
   spec.summary          = 'The Checkout SDK from Bambora makes it simple to accept payments in your app.'
   spec.homepage         = 'https://developer.bambora.com'
   spec.license          = { :type => "MIT", :file => "LICENSE" }
