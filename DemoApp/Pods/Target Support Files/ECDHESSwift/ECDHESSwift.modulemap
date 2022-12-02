@@ -1,0 +1,6 @@
+framework module ECDHESSwift {
+  umbrella header "ECDHESSwift-umbrella.h"
+
+  export *
+  module * { export * }
+}

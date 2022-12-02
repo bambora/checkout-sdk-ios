@@ -1,0 +1,40 @@
+PODS:
+  - ASN1Decoder (1.8.0)
+  - BamboraSDK (0.0.1):
+    - ASN1Decoder (= 1.8.0)
+    - ECDHESSwift (= 0.0.4)
+    - IOSSecuritySuite (= 1.9.1)
+    - JOSESwift (= 1.8.1)
+  - CryptoSwift (1.0.0)
+  - ECDHESSwift (0.0.4):
+    - CryptoSwift (~> 1.0.0)
+    - JOSESwift (~> 1.8)
+  - IOSSecuritySuite (1.9.1)
+  - JOSESwift (1.8.1)
+
+DEPENDENCIES:
+  - BamboraSDK (from `../BamboraSDK`)
+
+SPEC REPOS:
+  trunk:
+    - ASN1Decoder
+    - CryptoSwift
+    - ECDHESSwift
+    - IOSSecuritySuite
+    - JOSESwift
+
+EXTERNAL SOURCES:
+  BamboraSDK:
+    :path: "../BamboraSDK"
+
+SPEC CHECKSUMS:
+  ASN1Decoder: 6110fdeacfdb41559b1481457a1645be716610aa
+  BamboraSDK: ecd4bebabdf13371906c9cdbc20f0c39c26c6fcb
+  CryptoSwift: d81eeaa59dc5a8d03720fe919a6fd07b51f7439f
+  ECDHESSwift: e52f8731f6424210b2dc076915616f537bf4b927
+  IOSSecuritySuite: 0dbc01c68ce296c390ccf0443bf68cb40077abe8
+  JOSESwift: 49c6e4497e061e085b9680b84b8cd6b5b64329bd
+
+PODFILE CHECKSUM: ad98429ecf5d726d630b8b9c1ea60493f768e008
+
+COCOAPODS: 1.11.3

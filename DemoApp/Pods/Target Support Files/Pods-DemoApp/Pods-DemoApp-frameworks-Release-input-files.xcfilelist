@@ -1,0 +1,7 @@
+${PODS_ROOT}/Target Support Files/Pods-DemoApp/Pods-DemoApp-frameworks.sh
+${BUILT_PRODUCTS_DIR}/ASN1Decoder/ASN1Decoder.framework
+${BUILT_PRODUCTS_DIR}/BamboraSDK/BamboraSDK.framework
+${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework
+${BUILT_PRODUCTS_DIR}/ECDHESSwift/ECDHESSwift.framework
+${BUILT_PRODUCTS_DIR}/IOSSecuritySuite/IOSSecuritySuite.framework
+${BUILT_PRODUCTS_DIR}/JOSESwift/JOSESwift.framework

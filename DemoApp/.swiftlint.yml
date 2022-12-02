@@ -1,0 +1,9 @@
+# These are the swiftlints rules for the project
+
+# paths to ignore during linting. Takes precedence over `included`.
+excluded:
+ - Pods
+ - fastlane
+ - App/Models/Generated
+ - .build # Where SPM keeps the dependencies
+ - Carthage
