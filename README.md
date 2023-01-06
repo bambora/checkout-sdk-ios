@@ -1,6 +1,8 @@
 # Bambora Checkout SDK for iOS
 The Checkout SDK for iOS provides the tools necessary for integrating Bambora Checkout with your iOS application. The SDK helps with displaying the Checkout session, and sending out events during the payment flow.
 
+![Demo of the card payment flow.](/Assets/Card_Payment_Demo.gif)
+
 ## Installation
 The Bambora SDK is available via [CocoaPods](https://cocoapods.org/), [Swift Package Manager](https://github.com/apple/swift-package-manager) or [Carthage](https://github.com/Carthage/Carthage).
 

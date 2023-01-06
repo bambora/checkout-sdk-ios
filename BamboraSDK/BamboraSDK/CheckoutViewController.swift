@@ -27,37 +27,16 @@ import SwiftUI
  */
 internal class BamboraCheckoutViewController: UIViewController {
 
-    private var paymentData: Authorize?
-    private let token: String?
-    private let baseUrl: String?
-    private let returnUrl: String?
+    private let url: URL
     private let delegate: CheckoutDelegate?
-    private var overrideWithURL: URL?
     private var viewTranslation = CGPoint(x: 0, y: 0)
 
-    /**
-     Initialization of the ViewController.
-     - Parameters:
-       - sessionToken: The token that you receive when creating a session.
-       - baseUrl: The URL of the Bambora backend to which the SDK will connect.
-       - returnUrl: The deeplink that was specified in the URL scheme of the host app.
-       - delegate: A delegate which transfers the events from the WebView to the host app.
-       - overrideWithURL: Optional.
-            If provided, the WebView will open this URL.
-            Otherwise the Checkout WebView will be initialized.
-     */
     init(
-        token: String?,
-        baseUrl: String?,
-        returnUrl: String?,
-        delegate: CheckoutDelegate?,
-        overrideWithURL: URL? = nil
+        url: URL,
+        delegate: CheckoutDelegate?
     ) {
-        self.token = token
-        self.baseUrl = baseUrl
-        self.returnUrl = returnUrl
+        self.url = url
         self.delegate = delegate
-        self.overrideWithURL = overrideWithURL
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -90,7 +69,7 @@ internal class BamboraCheckoutViewController: UIViewController {
 
     /**
      Shows the ViewController on top of the host app.
-     If the overrideWithUrl is provided, it opens that URL.
+     If the epayReturnUrlString is provided, it opens that URL.
      Otherwise it initializes the Checkout WebView.
      */
     func show() {
@@ -99,11 +78,7 @@ internal class BamboraCheckoutViewController: UIViewController {
                 topController = presentedViewController
             }
             self.modalPresentationStyle = .automatic
-            if let overrideUrl = overrideWithURL {
-                checkoutWebView.openWebViewWith(url: overrideUrl)
-            } else {
-                initializeWith(token: token ?? "", baseUrl: baseUrl ?? "", returnUrl: returnUrl ?? "")
-            }
+            checkoutWebView.openWebViewWith(url: url)
             topController.present(self, animated: true)
         }
     }
@@ -146,17 +121,6 @@ internal class BamboraCheckoutViewController: UIViewController {
         default:
             break
         }
-    }
-
-    /**
-     Initialization of the WebView.
-     - Parameters:
-        - sessionToken: The token that you receive when creating a session.
-        - baseUrl: The URL of the Bambora backend to which the SDK will connect.
-        - returnUrl: The deeplink that was specified in the URL scheme of the host app.
-     */
-    func initializeWith(token: String, baseUrl: String, returnUrl: String) {
-        checkoutWebView.initialize(checkoutToken: token, baseUrl: baseUrl, returnUrl: returnUrl)
     }
 
     private func setupConstraints() {

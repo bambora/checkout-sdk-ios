@@ -11,14 +11,7 @@ Pod::Spec.new do |spec|
   spec.license       = { :type => "MIT", :file => "../LICENSE.txt" }
   spec.author        = "Bambora"
   spec.platform      = :ios, "14.0"
-  spec.source        = {
-        :path => '.',
-        :submodules => true
-  }
+  spec.source        = { :git => "https://github.com/bambora/checkout-sdk-ios.git", :tag => spec.version }
   spec.swift_version = "5"
-  spec.dependency 'JOSESwift', '1.8.1'
-  spec.dependency 'IOSSecuritySuite', '1.9.1'
-  spec.dependency 'ECDHESSwift', '0.0.4'
-  spec.dependency 'ASN1Decoder', '1.8.0'
-  spec.source_files = "BamboraSDK/*.swift"
+  spec.source_files = "BamboraSDK/*.swift", "BamboraSDK/*/*.swift"
 end

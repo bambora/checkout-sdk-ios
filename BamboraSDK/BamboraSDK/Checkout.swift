@@ -25,18 +25,19 @@ import WebKit
 /// The layer between your app and the SDK.
 public final class Checkout: NSObject {
 
-    private let sessionToken: String
-    internal let baseUrl: String
-    internal var subscribedEvents = [EventType]()
-    private var bamboraViewController: BamboraCheckoutViewController?
-    /// Delegate which should be provided to receive the events that are generated during the payment.
+    private var checkoutUrl: URL
+
+    /// The delegate that will receive events that are generated during the payment.
     public var delegate: CheckoutDelegate?
+    internal var subscribedEvents = [EventType]()
+
+    private var bamboraViewController: BamboraCheckoutViewController?
 
     /**
      The value of return URL is based on the app scheme defined in the host app.
      If the app scheme cannot be retrieved, the return URL is an empty String.
      */
-    private var returnUrl: String {
+    private static var returnUrl: String {
         guard let urlTypes = Bundle.main.infoDictionary?["CFBundleURLTypes"] as? [AnyObject],
               let urlTypeDictionary = urlTypes.first as? [String: AnyObject],
               let urlSchemes = urlTypeDictionary["CFBundleURLSchemes"] as? [AnyObject],
@@ -45,41 +46,41 @@ public final class Checkout: NSObject {
         return "\(returnURLScheme)://bamborasdk/return"
     }
 
-    internal init(sessionToken: String, baseUrl: String) {
-        self.sessionToken = sessionToken
-        self.baseUrl = baseUrl
+    internal init(sessionToken: String, baseUrl: String) throws {
+        if let url = URL(string: Self.constructCheckoutUrl(baseUrl, sessionToken)) {
+            self.checkoutUrl = url
+        } else {
+            throw BamboraError.urlParseError
+        }
+    }
+
+    internal init(epayReturnUrl: URL) throws {
+        self.checkoutUrl = epayReturnUrl
+    }
+
+    internal func setEpayReturnUrl(_ epayReturnUrl: URL) throws {
+        self.checkoutUrl = epayReturnUrl
     }
 
     /**
-     Notifies the `BamboraCheckoutView` that the host app was opened via a deeplink.
+     Will show the Checkout on top of your app.
+     If the device has no working internet connection, an error is returned.
      */
-    internal func processDeeplink(url: URL) {
-        do {
-            if let urlString = try DeepLinkHandler.processDeeplink(url: url) {
-                let userInfo: [String: String] = ["url": urlString]
+    public func show() {
+        if Reachability.isConnectedToNetwork() {
+            if bamboraViewController != nil {
+                let userInfo: [String: String] = ["url": checkoutUrl.absoluteString]
                 NotificationCenter.default.post(
                     name: BamboraConstants.deeplinkNotification,
                     object: nil,
                     userInfo: userInfo)
+            } else {
+                bamboraViewController = BamboraCheckoutViewController(
+                    url: checkoutUrl,
+                    delegate: delegate
+                )
+                bamboraViewController?.show()
             }
-        } catch {
-            delegate?.onEventDispatched(event: ErrorEvent(payload: .genericError))
-        }
-    }
-
-    /**
-     If there an internet connection, the Bambora Checkout is shown on top of your app.
-     If there is no internet connection, it dispatches an `ErrorEvent`.
-     */
-    public func show() {
-        if Reachability.isConnectedToNetwork() {
-            bamboraViewController = BamboraCheckoutViewController(
-                token: sessionToken,
-                baseUrl: baseUrl,
-                returnUrl: returnUrl,
-                delegate: delegate
-            )
-            bamboraViewController?.show()
         } else {
             delegate?.onEventDispatched(event: ErrorEvent(payload: .internetError))
         }
@@ -145,5 +146,50 @@ public final class Checkout: NSObject {
                 }
             }
         }
+    }
+
+    // MARK: Generate Checkout URL
+    private enum Constants {
+        static let webViewParameter = "?ui=inline#"
+        static let identifier = "CheckoutSDKiOS/"
+        static let version = "2.0.0"
+    }
+
+    private static func constructCheckoutUrl(_ baseUrl: String, _ sessionToken: String) -> String {
+        let paymentOptions = getEncodedPaymentOptions(returnUrl: returnUrl)
+        return "\(baseUrl)\("/")\(sessionToken)\(Constants.webViewParameter)\(paymentOptions)"
+    }
+
+    /// - Returns: The `PaymentOptions` as an UTF-8 encoded JSON string.
+    private static func getEncodedPaymentOptions(returnUrl: String) -> String {
+        let sdkVersion = Constants.version
+        let versionString = Constants.identifier + sdkVersion
+        let paymentOptions = PaymentOptions(
+            version: versionString,
+            paymentAppsInstalled: getInstalledWalletProducts(),
+            appReturnUrl: returnUrl
+        )
+        let jsonString = jsonStringFrom(dictionary: paymentOptions.jsonRepresentation)
+        guard let data = jsonString.data(using: String.Encoding.utf8) else { return Constants.version }
+        let result = data.base64EncodedString(options: NSData.Base64EncodingOptions(rawValue: 0))
+        return result
+    }
+
+    private static func getInstalledWalletProducts() -> [WalletProduct] {
+        var apps: [WalletProduct] = []
+        let app = UIApplication.shared
+        for product in WalletProduct.allCases {
+            if let url = URL(string: product.deepLink) {
+                if app.canOpenURL(url) {
+                    apps.append(product)
+                }
+            }
+        }
+        return apps
+    }
+
+    private static func jsonStringFrom(dictionary: [String: Any]) -> String {
+        guard let json = JSONStringEncoder().encode(dictionary) else { return "{}" }
+        return json
     }
 }

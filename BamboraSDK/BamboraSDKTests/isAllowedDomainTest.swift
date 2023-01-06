@@ -26,24 +26,44 @@ final class AllowedDomainTest: XCTestCase {
 
     func test_allowed_domain() {
         var allowedDomain = "https://wallet-v1-test.api.epay.eu/allowed/domain"
-        var isAllowed = DeepLinkHandler.isAllowedDomain(url: allowedDomain)
+        var isAllowed = DeepLinkValidator.isAllowedDomain(url: allowedDomain)
 
         XCTAssertTrue(isAllowed)
 
         allowedDomain = "https://wallet-v1.api.epay.eu/allowed/domain"
-        isAllowed = DeepLinkHandler.isAllowedDomain(url: allowedDomain)
+        isAllowed = DeepLinkValidator.isAllowedDomain(url: allowedDomain)
+
+        XCTAssertTrue(isAllowed)
+
+        allowedDomain = "https://wallet-v1.api-eu.bambora.com/allowed/domain"
+        isAllowed = DeepLinkValidator.isAllowedDomain(url: allowedDomain)
+
+        XCTAssertTrue(isAllowed)
+
+        allowedDomain = "https://authorize-v1-test.api.epay.eu/allowed/domain"
+        isAllowed = DeepLinkValidator.isAllowedDomain(url: allowedDomain)
+
+        XCTAssertTrue(isAllowed)
+
+        allowedDomain = "https://authorize-v1.api.epay.eu/allowed/domain"
+        isAllowed = DeepLinkValidator.isAllowedDomain(url: allowedDomain)
+
+        XCTAssertTrue(isAllowed)
+
+        allowedDomain = "https://authorize-v1.api-eu.bambora.com/allowed/domain"
+        isAllowed = DeepLinkValidator.isAllowedDomain(url: allowedDomain)
 
         XCTAssertTrue(isAllowed)
     }
 
     func test_forbidden_domain() {
         var forbiddenDomain = "https://forbidden.domain/forbidden/domain"
-        var isAllowed = DeepLinkHandler.isAllowedDomain(url: forbiddenDomain)
+        var isAllowed = DeepLinkValidator.isAllowedDomain(url: forbiddenDomain)
 
         XCTAssertFalse(isAllowed)
 
         forbiddenDomain = "https://api.epay.eu/forbidden/domain"
-        isAllowed = DeepLinkHandler.isAllowedDomain(url: forbiddenDomain)
+        isAllowed = DeepLinkValidator.isAllowedDomain(url: forbiddenDomain)
 
         XCTAssertFalse(isAllowed)
     }

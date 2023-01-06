@@ -54,33 +54,7 @@ final class CheckoutTest: XCTestCase {
         Bambora.close()
     }
 
-    func test_baseUrl_empty() {
-        guard let defaultCheckout else {
-            XCTFail("defaultCheckout is null")
-            return
-        }
-        let defaultBaseUrl = "https://v1.checkout.bambora.com"
-
-        XCTAssertEqual(defaultBaseUrl, defaultCheckout.baseUrl)
-    }
-
-    func test_baseUrl_with_value() {
-        Bambora.close()
-
-        var customCheckout: Checkout?
-        do {
-            customCheckout = try Bambora.checkout(sessionToken: "sessionToken", customUrl: customBaseUrl)
-        } catch {
-            print("Error initializing customCheckout: \(error.localizedDescription)")
-        }
-
-        guard let customCheckout else {
-            XCTFail("customCheckout is null")
-            return
-        }
-
-        XCTAssertEqual(customBaseUrl, customCheckout.baseUrl)
-    }
+    // TODO: IWLBB-159: Add tests for validating URL / PaymentOptions generation
 
     func test_close_SDK() {
         guard defaultCheckout != nil else {

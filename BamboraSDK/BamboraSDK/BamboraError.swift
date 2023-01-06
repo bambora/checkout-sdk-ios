@@ -26,6 +26,7 @@ public enum BamboraError: Error {
     case internetError
     case loadSessionError
     case genericError
+    case urlParseError
     case sdkNotInitializedError
     case sdkAlreadyInitializedError
 }
@@ -39,6 +40,8 @@ extension BamboraError: CustomStringConvertible {
             return "There was a problem while loading the session."
         case .genericError:
             return "An unexpected error has occured."
+        case .urlParseError:
+            return "Unable to construct valid url from the provided parameters."
         case .sdkNotInitializedError:
             return "Please initialize the Bambora SDK before you use this operation."
         case .sdkAlreadyInitializedError:
@@ -59,6 +62,9 @@ extension BamboraError: LocalizedError {
         case .genericError:
             return NSLocalizedString("An unexpected error has occured.",
                                      comment: "An unexpected error has occured.")
+        case .urlParseError:
+            return NSLocalizedString("Unable to construct valid url from the provided parameters.",
+                                     comment: "Unable to construct valid url from the provided parameters.")
         case .sdkNotInitializedError:
             return NSLocalizedString("Please initialize the Bambora SDK before you use this operation.",
                                      comment: "Please initialize the Bambora SDK before you use this operation.")

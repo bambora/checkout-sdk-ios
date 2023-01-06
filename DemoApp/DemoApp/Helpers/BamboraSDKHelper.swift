@@ -22,6 +22,9 @@
 import BamboraSDK
 import Foundation
 
+/**
+ Wrapper class that demonstrates how to interact with the Bambora Checkout SDK.
+ */
 internal class BamboraSDKHelper: ObservableObject, CheckoutDelegate {
     private var checkout: Checkout?
     @Published var paymentData: Authorize?
@@ -32,30 +35,59 @@ internal class BamboraSDKHelper: ObservableObject, CheckoutDelegate {
         self.processReceivedEvent(event)
     }
 
-    /// Notifies the SDK that the app was opened via a deeplink
-    func processDeeplink(url: URL) {
-        Bambora.processDeeplink(url: url)
+    /**
+     Initializes the Bambora Checkout using the provided Token.
+     */
+    func openCheckout(using token: String) {
+        do {
+            checkout = try Bambora.checkout(sessionToken: token)
+            setupCheckoutDelegate()
+            checkout?.show()
+        } catch {
+            print(#function, error)
+        }
     }
 
     /**
-     Initializes the Bambora Checkout with the use of the token, custom base URL and session id.
-     Also assigns a delegate to the Checkout.
+     Initializes the Bambora Checkout using the provided Token, and connects to the provided custom endpoint.
      */
-    func initializeCheckout(token: String, useCustomUrl: Bool, customUrl: String) throws {
-        if useCustomUrl {
-            checkout = try Bambora.checkout(
-                sessionToken: token,
-                customUrl: customUrl
-            )
-        } else {
-            checkout = try Bambora.checkout(sessionToken: token)
+    func openCheckout(using token: String, and customUrl: String) {
+        do {
+            checkout = try Bambora.checkout(sessionToken: token, customUrl: customUrl)
+            setupCheckoutDelegate()
+            checkout?.show()
+        } catch {
+            print(#function, error)
         }
-        checkout?.delegate = self
-        checkout?.subscribeOnAllEvents()
-        checkout?.show()
     }
 
-    /// Determines how to process the `Event` that is received from the SDK.
+    /**
+     Allows the SDK to handle the received deeplink return, coming from a wallet payment or 3DS challenge.
+     Note that if the app was killed while the user was completing the wallet payment, the SDK will no longer be
+     initialized, and the event delegate has to be re-configured. This is why `checkout` is re-assigned, and
+     `setupCheckoutDelegate()` is called again.
+     */
+    func processDeeplink(url: URL) {
+        do {
+            checkout = try Bambora.checkoutAfterReturn(with: url)
+            setupCheckoutDelegate()
+            checkout?.show()
+        } catch {
+            print(#function, error)
+        }
+    }
+
+    /**
+     Assigns a delegate to the Checkout and subscribes to all events.
+     */
+    private func setupCheckoutDelegate() {
+        checkout?.delegate = self
+        checkout?.subscribeOnAllEvents()
+    }
+
+    /**
+     Processes the `Event` that is received from the SDK.
+     */
     private func processReceivedEvent(_ receivedEvent: Event) {
         switch receivedEvent {
         case let authorized as Authorize:

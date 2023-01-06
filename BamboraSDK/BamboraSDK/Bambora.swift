@@ -24,18 +24,14 @@ import Foundation
 /// Entrypoint of the Bambora Checkout SDK.
 public struct Bambora {
     /**
-     The Checkout instance.
-     Use this instance to interact with the Checkout.
-     Initialize using `checkout(sessionToken:customUrl:)`.
+     Use this instance to interact with the Checkout. For example to subscribe to events.
+     Initialize using `checkout(sessionToken:customUrl:)` or, after a return from another app, `checkoutAfterReturn(url:)`
      */
     private(set) static var checkout: Checkout?
 
     /**
-     Checks if the `Checkout` is currently initialized.
-     - Returns: Bool.
-        True, if the `Checkout` is initialized.
-        False, if the `Checkout` is not initialized.
-     */
+     Checks if the SDK is currently initialized.
+     - Returns: true if there is an active instance of `Checkout`, false otherwise.*/
     public static var isInitialized: Bool {
         return checkout != nil
     }
@@ -55,10 +51,10 @@ public struct Bambora {
         sessionToken: String,
         customUrl: String = BamboraConstants.productionURL
     ) throws -> Checkout {
-        if checkout != nil {
+        if isInitialized {
             throw BamboraError.sdkAlreadyInitializedError
         }
-        checkout = Checkout(sessionToken: sessionToken, baseUrl: customUrl)
+        checkout = try Checkout(sessionToken: sessionToken, baseUrl: customUrl)
 
         guard let checkout else {
             throw BamboraError.genericError
@@ -67,36 +63,35 @@ public struct Bambora {
         return checkout
     }
 
-    /// Closes the Bambora Checkout and makes the `Checkout` instance nil.
-    public static func close() {
-        checkout?.closeViewController()
-        checkout = nil
+    /**
+     Re-initialize the SDK after the user has been returned to your app after a wallet payment or challenge. The SDK will validate the provided url.
+     Call `show()` again to show the final payment result.
+     - Parameter url: The URL that you received when the user returned to your app.
+     - Returns: An instance of Checkout, use this instance to interact with the Checkout.
+     */
+    public static func checkoutAfterReturn(with url: URL) throws -> Checkout {
+        guard let epayReturnUrl = DeepLinkValidator.processDeeplink(url: url) else {
+            throw BamboraError.genericError
+        }
+
+        if isInitialized {
+            try checkout?.setEpayReturnUrl(epayReturnUrl)
+        } else {
+            checkout = try Checkout(epayReturnUrl: epayReturnUrl)
+        }
+
+        guard let checkout else {
+            throw BamboraError.genericError
+        }
+
+        return checkout
     }
 
     /**
-     If `Checkout` is already initialized, the SDK will open the provided epayReturnUrl in the existing WebView.
-     If `Checkout` is not initialized, the SDK will open the provided epayReturnUrl in a new WebView.
-     - Parameter url: The URL that reopens your app. This URL should contain the epayReturnUrl as a query parameter.
+     Closes the Bambora Checkout and makes the `Checkout` instance nil.
      */
-    public static func processDeeplink(url: URL) {
-        if isInitialized {
-            checkout?.processDeeplink(url: url)
-        } else {
-            do {
-                if let epayReturnUrlString = try DeepLinkHandler.processDeeplink(url: url),
-                   let epayReturnUrl = URL(string: epayReturnUrlString) {
-                    let bamboraViewController = BamboraCheckoutViewController(
-                        token: nil,
-                        baseUrl: nil,
-                        returnUrl: nil,
-                        delegate: checkout?.delegate,
-                        overrideWithURL: epayReturnUrl
-                    )
-                    bamboraViewController.show()
-                }
-            } catch {
-                print("Error: \(error.localizedDescription)")
-            }
-        }
+    public static func close() {
+        checkout?.closeViewController()
+        checkout = nil
     }
 }

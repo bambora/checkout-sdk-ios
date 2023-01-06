@@ -24,6 +24,5 @@ import Foundation
 /// Static constant values of the SDK.
 public enum BamboraConstants {
     public static let productionURL = "https://v1.checkout.bambora.com"
-    internal static let allowedDomains = ["wallet-v1-test.api.epay.eu", "wallet-v1.api.epay.eu"]
     internal static let deeplinkNotification = NSNotification.Name(rawValue: "deeplinkNotification")
 }

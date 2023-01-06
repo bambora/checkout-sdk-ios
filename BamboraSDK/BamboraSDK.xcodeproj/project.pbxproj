@@ -10,12 +10,8 @@
 		7BC68D7B292E1EF600368883 /* AuthorizeDecoderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC68D7A292E1EF600368883 /* AuthorizeDecoderTest.swift */; };
 		7BC68D7D292E2A4400368883 /* Dictionary+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC68D7C292E2A4400368883 /* Dictionary+Extensions.swift */; };
 		7BD57EF7291E5AF5002E783C /* isAllowedDomainTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD57EF6291E5AF5002E783C /* isAllowedDomainTest.swift */; };
-		7BD59B062872DD8C00024E46 /* JOSESwift in Frameworks */ = {isa = PBXBuildFile; productRef = 7BD59B052872DD8C00024E46 /* JOSESwift */; };
-		7BD59B092872DDA600024E46 /* IOSSecuritySuite in Frameworks */ = {isa = PBXBuildFile; productRef = 7BD59B082872DDA600024E46 /* IOSSecuritySuite */; };
-		7BD59B0C2872DDB300024E46 /* CryptoSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 7BD59B0B2872DDB300024E46 /* CryptoSwift */; };
-		7BD59B182872DF1600024E46 /* ASN1Decoder in Frameworks */ = {isa = PBXBuildFile; productRef = 7BD59B172872DF1600024E46 /* ASN1Decoder */; };
 		7BDB34E7291B8E6F00D0BA77 /* Collection+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDB34E6291B8E6F00D0BA77 /* Collection+Extensions.swift */; };
-		7BDB34E9291B8E8E00D0BA77 /* DeeplinkHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDB34E8291B8E8E00D0BA77 /* DeeplinkHandler.swift */; };
+		7BDB34E9291B8E8E00D0BA77 /* DeeplinkValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDB34E8291B8E8E00D0BA77 /* DeeplinkValidator.swift */; };
 		7BF09CB829140196007E1EDA /* CheckoutTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF09CB729140196007E1EDA /* CheckoutTest.swift */; };
 		7BF09CB929140196007E1EDA /* BamboraSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F605AB9A28350D0100CB5679 /* BamboraSDK.framework */; };
 		7BF09CC029140276007E1EDA /* BamboraConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF09CBF29140276007E1EDA /* BamboraConstants.swift */; };
@@ -50,7 +46,7 @@
 		7BC68D7C292E2A4400368883 /* Dictionary+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Extensions.swift"; sourceTree = "<group>"; };
 		7BD57EF6291E5AF5002E783C /* isAllowedDomainTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = isAllowedDomainTest.swift; sourceTree = "<group>"; };
 		7BDB34E6291B8E6F00D0BA77 /* Collection+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Extensions.swift"; sourceTree = "<group>"; };
-		7BDB34E8291B8E8E00D0BA77 /* DeeplinkHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeeplinkHandler.swift; sourceTree = "<group>"; };
+		7BDB34E8291B8E8E00D0BA77 /* DeeplinkValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeeplinkValidator.swift; sourceTree = "<group>"; };
 		7BF09CB529140196007E1EDA /* BamboraSDKTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BamboraSDKTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BF09CB729140196007E1EDA /* CheckoutTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutTest.swift; sourceTree = "<group>"; };
 		7BF09CBF29140276007E1EDA /* BamboraConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BamboraConstants.swift; sourceTree = "<group>"; };
@@ -84,10 +80,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7BD59B0C2872DDB300024E46 /* CryptoSwift in Frameworks */,
-				7BD59B062872DD8C00024E46 /* JOSESwift in Frameworks */,
-				7BD59B182872DF1600024E46 /* ASN1Decoder in Frameworks */,
-				7BD59B092872DDA600024E46 /* IOSSecuritySuite in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,7 +142,7 @@
 				F605ABCD2837892000CB5679 /* CheckoutViewController.swift */,
 				F6895C78283D574B00BDA94E /* EventController.swift */,
 				F605ABC32835181600CB5679 /* Bambora.swift */,
-				7BDB34E8291B8E8E00D0BA77 /* DeeplinkHandler.swift */,
+				7BDB34E8291B8E8E00D0BA77 /* DeeplinkValidator.swift */,
 			);
 			path = BamboraSDK;
 			sourceTree = "<group>";
@@ -202,10 +194,6 @@
 			);
 			name = BamboraSDK;
 			packageProductDependencies = (
-				7BD59B052872DD8C00024E46 /* JOSESwift */,
-				7BD59B082872DDA600024E46 /* IOSSecuritySuite */,
-				7BD59B0B2872DDB300024E46 /* CryptoSwift */,
-				7BD59B172872DF1600024E46 /* ASN1Decoder */,
 			);
 			productName = BamboraSDK;
 			productReference = F605AB9A28350D0100CB5679 /* BamboraSDK.framework */;
@@ -239,10 +227,6 @@
 			);
 			mainGroup = F605AB9028350D0100CB5679;
 			packageReferences = (
-				7BD59B042872DD8C00024E46 /* XCRemoteSwiftPackageReference "JOSESwift" */,
-				7BD59B072872DDA600024E46 /* XCRemoteSwiftPackageReference "IOSSecuritySuite" */,
-				7BD59B0A2872DDB300024E46 /* XCRemoteSwiftPackageReference "CryptoSwift" */,
-				7BD59B162872DF1600024E46 /* XCRemoteSwiftPackageReference "ASN1Decoder" */,
 			);
 			productRefGroup = F605AB9B28350D0100CB5679 /* Products */;
 			projectDirPath = "";
@@ -288,7 +272,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint --fix\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\n    swiftlint --fix\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -323,7 +307,7 @@
 				F605ABCE2837892000CB5679 /* CheckoutViewController.swift in Sources */,
 				F605ABC42835181600CB5679 /* Bambora.swift in Sources */,
 				F6C92E91285BAAC400E1A3FC /* WalletProduct.swift in Sources */,
-				7BDB34E9291B8E8E00D0BA77 /* DeeplinkHandler.swift in Sources */,
+				7BDB34E9291B8E8E00D0BA77 /* DeeplinkValidator.swift in Sources */,
 				7BDB34E7291B8E6F00D0BA77 /* Collection+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -608,64 +592,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		7BD59B042872DD8C00024E46 /* XCRemoteSwiftPackageReference "JOSESwift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/airsidemobile/JOSESwift";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.2.0;
-			};
-		};
-		7BD59B072872DDA600024E46 /* XCRemoteSwiftPackageReference "IOSSecuritySuite" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/securing/IOSSecuritySuite";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.9.1;
-			};
-		};
-		7BD59B0A2872DDB300024E46 /* XCRemoteSwiftPackageReference "CryptoSwift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/krzyzanowskim/CryptoSwift";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.5.0;
-			};
-		};
-		7BD59B162872DF1600024E46 /* XCRemoteSwiftPackageReference "ASN1Decoder" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/filom/ASN1Decoder";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.8.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		7BD59B052872DD8C00024E46 /* JOSESwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 7BD59B042872DD8C00024E46 /* XCRemoteSwiftPackageReference "JOSESwift" */;
-			productName = JOSESwift;
-		};
-		7BD59B082872DDA600024E46 /* IOSSecuritySuite */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 7BD59B072872DDA600024E46 /* XCRemoteSwiftPackageReference "IOSSecuritySuite" */;
-			productName = IOSSecuritySuite;
-		};
-		7BD59B0B2872DDB300024E46 /* CryptoSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 7BD59B0A2872DDB300024E46 /* XCRemoteSwiftPackageReference "CryptoSwift" */;
-			productName = CryptoSwift;
-		};
-		7BD59B172872DF1600024E46 /* ASN1Decoder */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 7BD59B162872DF1600024E46 /* XCRemoteSwiftPackageReference "ASN1Decoder" */;
-			productName = ASN1Decoder;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F605AB9128350D0100CB5679 /* Project object */;
 }

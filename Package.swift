@@ -33,16 +33,9 @@ let package = Package(
             name: "BamboraSDK",
             targets: ["BamboraSDK"])
     ],
-    dependencies: [
-        .package(url: "https://github.com/airsidemobile/JOSESwift", from: "2.2.0"),
-        .package(url: "https://github.com/krzyzanowskim/CryptoSwift", from: "1.5.0"),
-        .package(url: "https://github.com/securing/IOSSecuritySuite", from: "1.9.1"),
-        .package(url: "https://github.com/filom/ASN1Decoder", from: "1.8.0")
-    ],
     targets: [
         .target(
             name: "BamboraSDK",
-            dependencies: ["JOSESwift", "CryptoSwift", "IOSSecuritySuite", "ASN1Decoder"],
             path: "BamboraSDK/BamboraSDK"
         )
     ]

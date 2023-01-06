@@ -19,7 +19,6 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-import BamboraSDK
 import SwiftUI
 
 struct StartSessionView: View {
@@ -105,11 +104,13 @@ struct StartSessionView: View {
 
     private func openCheckout() {
         guard validateInput() else { return }
+
         UserDefaults.standard.setValue(useCustomUrl, forKey: Constants.Keys.checkboxStatus)
-        do {
-            try bamboraSDKHelper.initializeCheckout(token: token, useCustomUrl: useCustomUrl, customUrl: customUrl)
-        } catch {
-            print(#function, error)
+
+        if useCustomUrl {
+            bamboraSDKHelper.openCheckout(using: token, and: customUrl)
+        } else {
+            bamboraSDKHelper.openCheckout(using: token)
         }
     }
 

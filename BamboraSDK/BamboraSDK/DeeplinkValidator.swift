@@ -21,22 +21,30 @@
 
 import Foundation
 
-internal class DeepLinkHandler {
+internal class DeepLinkValidator{
+
+    private static let allowedDomains = [
+        "wallet-v1-test.api.epay.eu",
+        "wallet-v1.api.epay.eu",
+        "wallet-v1.api.epay.eu",
+        "wallet-v1.api-eu.bambora.com",
+        "authorize-v1-test.api.epay.eu",
+        "authorize-v1.api.epay.eu",
+        "authorize-v1.api-eu.bambora.com"
+    ]
 
     /**
      Retrieves the epayReturnUrl from the url.
      - Parameter url: The URL that reopens the SDK. This URL contains the epayReturnUrl as a query parameter.
-     - Throws: `BamboraError.genericError` when the URL's host name is not an allowed domain or is nil.
+     - Returns: nil if the provided URL is not valid, otherwise the url is returned as a String.
      */
-    static func processDeeplink(url: URL) throws -> String? {
+    static func processDeeplink(url: URL) -> URL? {
         if let components = URLComponents(url: url, resolvingAgainstBaseURL: true),
            let queryItems = components.queryItems,
            let epayReturn = queryItems["epayreturn"],
            let urlString = epayReturn.removingPercentEncoding {
-            if isAllowedDomain(url: urlString) {
-                return urlString
-            } else {
-                throw BamboraError.genericError
+            if isAllowedDomain(url: urlString), let url = URL(string: urlString) {
+                return url
             }
         }
         return nil
@@ -51,7 +59,7 @@ internal class DeepLinkHandler {
      */
     static func isAllowedDomain(url: String) -> Bool {
         if let host = URL(string: url)?.host {
-            return BamboraConstants.allowedDomains.contains { $0 == host }
+            return allowedDomains.contains { $0 == host }
         }
         return false
     }

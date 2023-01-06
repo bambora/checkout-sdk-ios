@@ -1,5 +1,9 @@
 # These are the swiftlints rules for the project
 
+# Variable names should have at least 2 characters
+identifier_name:
+    min_length: 2
+
 # paths to ignore during linting. Takes precedence over `included`.
 excluded:
  - Pods
