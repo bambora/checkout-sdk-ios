@@ -165,7 +165,7 @@ public final class Checkout: NSObject {
     private enum Constants {
         static let webViewParameter = "?ui=inline#"
         static let identifier = "CheckoutSDKiOS/"
-        static let version = "2.0.0"
+        static let version = "2.0.1"
     }
 
     internal static func constructCheckoutUrl(
