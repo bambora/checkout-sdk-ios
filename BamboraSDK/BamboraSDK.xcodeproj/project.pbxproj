@@ -1,0 +1,605 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7BC68D7B292E1EF600368883 /* AuthorizeDecoderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC68D7A292E1EF600368883 /* AuthorizeDecoderTest.swift */; };
+		7BC68D7D292E2A4400368883 /* Dictionary+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC68D7C292E2A4400368883 /* Dictionary+Extensions.swift */; };
+		7BD57EF7291E5AF5002E783C /* isAllowedDomainTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD57EF6291E5AF5002E783C /* isAllowedDomainTest.swift */; };
+		7BDB34E7291B8E6F00D0BA77 /* Collection+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDB34E6291B8E6F00D0BA77 /* Collection+Extensions.swift */; };
+		7BDB34E9291B8E8E00D0BA77 /* DeeplinkValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDB34E8291B8E8E00D0BA77 /* DeeplinkValidator.swift */; };
+		7BEC37E52975AA9E007499BA /* ConstructCheckoutUrlTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BEC37E42975AA9E007499BA /* ConstructCheckoutUrlTest.swift */; };
+		7BF09CB829140196007E1EDA /* CheckoutTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF09CB729140196007E1EDA /* CheckoutTest.swift */; };
+		7BF09CB929140196007E1EDA /* BamboraSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F605AB9A28350D0100CB5679 /* BamboraSDK.framework */; };
+		7BF09CC029140276007E1EDA /* BamboraConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF09CBF29140276007E1EDA /* BamboraConstants.swift */; };
+		7BF6A6422A43268800F73A2E /* EpayReturnUrlTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF6A6412A43268800F73A2E /* EpayReturnUrlTest.swift */; };
+		F605ABC2283517B900CB5679 /* Checkout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F605ABC1283517B900CB5679 /* Checkout.swift */; };
+		F605ABC42835181600CB5679 /* Bambora.swift in Sources */ = {isa = PBXBuildFile; fileRef = F605ABC32835181600CB5679 /* Bambora.swift */; };
+		F605ABCA2835214C00CB5679 /* CheckoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F605ABC92835214C00CB5679 /* CheckoutView.swift */; };
+		F605ABCE2837892000CB5679 /* CheckoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F605ABCD2837892000CB5679 /* CheckoutViewController.swift */; };
+		F6895C75283BE2A900BDA94E /* EventType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6895C74283BE2A900BDA94E /* EventType.swift */; };
+		F6895C77283BE36E00BDA94E /* CheckoutEventMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6895C76283BE36E00BDA94E /* CheckoutEventMapper.swift */; };
+		F6895C79283D574B00BDA94E /* EventController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6895C78283D574B00BDA94E /* EventController.swift */; };
+		F6895C7B283D5D3F00BDA94E /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6895C7A283D5D3F00BDA94E /* Event.swift */; };
+		F6895C8128472FF400BDA94E /* CheckoutDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6895C8028472FF400BDA94E /* CheckoutDelegate.swift */; };
+		F6C92E85285B1F9700E1A3FC /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C92E84285B1F9700E1A3FC /* Reachability.swift */; };
+		F6C92E87285B1FB600E1A3FC /* BamboraError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C92E86285B1FB600E1A3FC /* BamboraError.swift */; };
+		F6C92E89285B20AD00E1A3FC /* JSONStringEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C92E88285B20AD00E1A3FC /* JSONStringEncoder.swift */; };
+		F6C92E8F285B45CC00E1A3FC /* PaymentOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C92E8E285B45CC00E1A3FC /* PaymentOptions.swift */; };
+		F6C92E91285BAAC400E1A3FC /* WalletProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C92E90285BAAC400E1A3FC /* WalletProduct.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7BF09CBA29140196007E1EDA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F605AB9128350D0100CB5679 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F605AB9928350D0100CB5679;
+			remoteInfo = BamboraSDK;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		7BC68D7A292E1EF600368883 /* AuthorizeDecoderTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizeDecoderTest.swift; sourceTree = "<group>"; };
+		7BC68D7C292E2A4400368883 /* Dictionary+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Extensions.swift"; sourceTree = "<group>"; };
+		7BD57EF6291E5AF5002E783C /* isAllowedDomainTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = isAllowedDomainTest.swift; sourceTree = "<group>"; };
+		7BDB34E6291B8E6F00D0BA77 /* Collection+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Extensions.swift"; sourceTree = "<group>"; };
+		7BDB34E8291B8E8E00D0BA77 /* DeeplinkValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeeplinkValidator.swift; sourceTree = "<group>"; };
+		7BEC37E42975AA9E007499BA /* ConstructCheckoutUrlTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstructCheckoutUrlTest.swift; sourceTree = "<group>"; };
+		7BF09CB529140196007E1EDA /* BamboraSDKTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BamboraSDKTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7BF09CB729140196007E1EDA /* CheckoutTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutTest.swift; sourceTree = "<group>"; };
+		7BF09CBF29140276007E1EDA /* BamboraConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BamboraConstants.swift; sourceTree = "<group>"; };
+		7BF6A6412A43268800F73A2E /* EpayReturnUrlTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpayReturnUrlTest.swift; sourceTree = "<group>"; };
+		F605AB9A28350D0100CB5679 /* BamboraSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BamboraSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F605ABC1283517B900CB5679 /* Checkout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checkout.swift; sourceTree = "<group>"; };
+		F605ABC32835181600CB5679 /* Bambora.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bambora.swift; sourceTree = "<group>"; };
+		F605ABC92835214C00CB5679 /* CheckoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutView.swift; sourceTree = "<group>"; };
+		F605ABCD2837892000CB5679 /* CheckoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutViewController.swift; sourceTree = "<group>"; };
+		F6895C74283BE2A900BDA94E /* EventType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventType.swift; sourceTree = "<group>"; };
+		F6895C76283BE36E00BDA94E /* CheckoutEventMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutEventMapper.swift; sourceTree = "<group>"; };
+		F6895C78283D574B00BDA94E /* EventController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventController.swift; sourceTree = "<group>"; };
+		F6895C7A283D5D3F00BDA94E /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		F6895C8028472FF400BDA94E /* CheckoutDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutDelegate.swift; sourceTree = "<group>"; };
+		F6C92E84285B1F9700E1A3FC /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		F6C92E86285B1FB600E1A3FC /* BamboraError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BamboraError.swift; sourceTree = "<group>"; };
+		F6C92E88285B20AD00E1A3FC /* JSONStringEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONStringEncoder.swift; sourceTree = "<group>"; };
+		F6C92E8E285B45CC00E1A3FC /* PaymentOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentOptions.swift; sourceTree = "<group>"; };
+		F6C92E90285BAAC400E1A3FC /* WalletProduct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletProduct.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7BF09CB229140196007E1EDA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7BF09CB929140196007E1EDA /* BamboraSDK.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F605AB9728350D0100CB5679 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7BDB34E3291B8DEC00D0BA77 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7BDB34E6291B8E6F00D0BA77 /* Collection+Extensions.swift */,
+				7BC68D7C292E2A4400368883 /* Dictionary+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		7BF09CB629140196007E1EDA /* BamboraSDKTests */ = {
+			isa = PBXGroup;
+			children = (
+				7BF09CB729140196007E1EDA /* CheckoutTest.swift */,
+				7BF6A6412A43268800F73A2E /* EpayReturnUrlTest.swift */,
+				7BD57EF6291E5AF5002E783C /* isAllowedDomainTest.swift */,
+				7BC68D7A292E1EF600368883 /* AuthorizeDecoderTest.swift */,
+				7BEC37E42975AA9E007499BA /* ConstructCheckoutUrlTest.swift */,
+			);
+			path = BamboraSDKTests;
+			sourceTree = "<group>";
+		};
+		F605AB9028350D0100CB5679 = {
+			isa = PBXGroup;
+			children = (
+				F605AB9C28350D0100CB5679 /* BamboraSDK */,
+				7BF09CB629140196007E1EDA /* BamboraSDKTests */,
+				F605AB9B28350D0100CB5679 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F605AB9B28350D0100CB5679 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F605AB9A28350D0100CB5679 /* BamboraSDK.framework */,
+				7BF09CB529140196007E1EDA /* BamboraSDKTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F605AB9C28350D0100CB5679 /* BamboraSDK */ = {
+			isa = PBXGroup;
+			children = (
+				7BDB34E3291B8DEC00D0BA77 /* Extensions */,
+				7BF09CBF29140276007E1EDA /* BamboraConstants.swift */,
+				F6C92E90285BAAC400E1A3FC /* WalletProduct.swift */,
+				F605ABC1283517B900CB5679 /* Checkout.swift */,
+				F605ABC92835214C00CB5679 /* CheckoutView.swift */,
+				F6895C8028472FF400BDA94E /* CheckoutDelegate.swift */,
+				F6C92E86285B1FB600E1A3FC /* BamboraError.swift */,
+				F6C92E84285B1F9700E1A3FC /* Reachability.swift */,
+				F6C92E8E285B45CC00E1A3FC /* PaymentOptions.swift */,
+				F6C92E88285B20AD00E1A3FC /* JSONStringEncoder.swift */,
+				F6895C74283BE2A900BDA94E /* EventType.swift */,
+				F6895C7A283D5D3F00BDA94E /* Event.swift */,
+				F6895C76283BE36E00BDA94E /* CheckoutEventMapper.swift */,
+				F605ABCD2837892000CB5679 /* CheckoutViewController.swift */,
+				F6895C78283D574B00BDA94E /* EventController.swift */,
+				F605ABC32835181600CB5679 /* Bambora.swift */,
+				7BDB34E8291B8E8E00D0BA77 /* DeeplinkValidator.swift */,
+			);
+			path = BamboraSDK;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		F605AB9528350D0100CB5679 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		7BF09CB429140196007E1EDA /* BamboraSDKTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7BF09CBC29140196007E1EDA /* Build configuration list for PBXNativeTarget "BamboraSDKTests" */;
+			buildPhases = (
+				7BF09CB129140196007E1EDA /* Sources */,
+				7BF09CB229140196007E1EDA /* Frameworks */,
+				7BF09CB329140196007E1EDA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7BF09CBB29140196007E1EDA /* PBXTargetDependency */,
+			);
+			name = BamboraSDKTests;
+			productName = BamboraSDKTests;
+			productReference = 7BF09CB529140196007E1EDA /* BamboraSDKTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F605AB9928350D0100CB5679 /* BamboraSDK */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F605ABAE28350D0100CB5679 /* Build configuration list for PBXNativeTarget "BamboraSDK" */;
+			buildPhases = (
+				F605AB9528350D0100CB5679 /* Headers */,
+				F605AB9628350D0100CB5679 /* Sources */,
+				F605AB9728350D0100CB5679 /* Frameworks */,
+				F605AB9828350D0100CB5679 /* Resources */,
+				F605ABB428350D5700CB5679 /* SwiftLint */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BamboraSDK;
+			packageProductDependencies = (
+			);
+			productName = BamboraSDK;
+			productReference = F605AB9A28350D0100CB5679 /* BamboraSDK.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F605AB9128350D0100CB5679 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1400;
+				LastUpgradeCheck = 1340;
+				TargetAttributes = {
+					7BF09CB429140196007E1EDA = {
+						CreatedOnToolsVersion = 14.0.1;
+					};
+					F605AB9928350D0100CB5679 = {
+						CreatedOnToolsVersion = 13.4;
+					};
+				};
+			};
+			buildConfigurationList = F605AB9428350D0100CB5679 /* Build configuration list for PBXProject "BamboraSDK" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F605AB9028350D0100CB5679;
+			packageReferences = (
+			);
+			productRefGroup = F605AB9B28350D0100CB5679 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F605AB9928350D0100CB5679 /* BamboraSDK */,
+				7BF09CB429140196007E1EDA /* BamboraSDKTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7BF09CB329140196007E1EDA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F605AB9828350D0100CB5679 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		F605ABB428350D5700CB5679 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\n    swiftlint --fix\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7BF09CB129140196007E1EDA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7BD57EF7291E5AF5002E783C /* isAllowedDomainTest.swift in Sources */,
+				7BF6A6422A43268800F73A2E /* EpayReturnUrlTest.swift in Sources */,
+				7BF09CB829140196007E1EDA /* CheckoutTest.swift in Sources */,
+				7BC68D7B292E1EF600368883 /* AuthorizeDecoderTest.swift in Sources */,
+				7BEC37E52975AA9E007499BA /* ConstructCheckoutUrlTest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F605AB9628350D0100CB5679 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F6895C7B283D5D3F00BDA94E /* Event.swift in Sources */,
+				7BF09CC029140276007E1EDA /* BamboraConstants.swift in Sources */,
+				F6C92E8F285B45CC00E1A3FC /* PaymentOptions.swift in Sources */,
+				F6895C77283BE36E00BDA94E /* CheckoutEventMapper.swift in Sources */,
+				F6C92E85285B1F9700E1A3FC /* Reachability.swift in Sources */,
+				F6C92E89285B20AD00E1A3FC /* JSONStringEncoder.swift in Sources */,
+				F605ABC2283517B900CB5679 /* Checkout.swift in Sources */,
+				F605ABCA2835214C00CB5679 /* CheckoutView.swift in Sources */,
+				F6895C75283BE2A900BDA94E /* EventType.swift in Sources */,
+				F6895C8128472FF400BDA94E /* CheckoutDelegate.swift in Sources */,
+				F6C92E87285B1FB600E1A3FC /* BamboraError.swift in Sources */,
+				7BC68D7D292E2A4400368883 /* Dictionary+Extensions.swift in Sources */,
+				F6895C79283D574B00BDA94E /* EventController.swift in Sources */,
+				F605ABCE2837892000CB5679 /* CheckoutViewController.swift in Sources */,
+				F605ABC42835181600CB5679 /* Bambora.swift in Sources */,
+				F6C92E91285BAAC400E1A3FC /* WalletProduct.swift in Sources */,
+				7BDB34E9291B8E8E00D0BA77 /* DeeplinkValidator.swift in Sources */,
+				7BDB34E7291B8E6F00D0BA77 /* Collection+Extensions.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7BF09CBB29140196007E1EDA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F605AB9928350D0100CB5679 /* BamboraSDK */;
+			targetProxy = 7BF09CBA29140196007E1EDA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		7BF09CBD29140196007E1EDA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				EXCLUDED_ARCHS = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bambora.checkout.BamboraSDKTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7BF09CBE29140196007E1EDA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				EXCLUDED_ARCHS = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bambora.checkout.BamboraSDKTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		F605ABAC28350D0100CB5679 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				EXCLUDED_ARCHS = arm64;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		F605ABAD28350D0100CB5679 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				EXCLUDED_ARCHS = arm64;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		F605ABAF28350D0100CB5679 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				EXCLUDED_ARCHS = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/BamboraSDK/Frameworks",
+				);
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bambora.checkout.BamboraSDK;
+				PRODUCT_NAME = BamboraSDK;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F605ABB028350D0100CB5679 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				EXCLUDED_ARCHS = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/BamboraSDK/Frameworks",
+				);
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bambora.checkout.BamboraSDK;
+				PRODUCT_NAME = BamboraSDK;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7BF09CBC29140196007E1EDA /* Build configuration list for PBXNativeTarget "BamboraSDKTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7BF09CBD29140196007E1EDA /* Debug */,
+				7BF09CBE29140196007E1EDA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F605AB9428350D0100CB5679 /* Build configuration list for PBXProject "BamboraSDK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F605ABAC28350D0100CB5679 /* Debug */,
+				F605ABAD28350D0100CB5679 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F605ABAE28350D0100CB5679 /* Build configuration list for PBXNativeTarget "BamboraSDK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F605ABAF28350D0100CB5679 /* Debug */,
+				F605ABB028350D0100CB5679 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F605AB9128350D0100CB5679 /* Project object */;
+}
