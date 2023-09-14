@@ -24,7 +24,7 @@ import XCTest
 
 final class ConstructCheckoutUrlTest: XCTestCase {
     private let baseUrl = "https://base.url.com"
-    private let sessionToken = "369b2892a3c44a5699d557a37c4a78a6"
+    private let sessionToken = UUID().uuidString
     private let returnUrl = "bamborademoapp://bamborasdk/return"
 
     func test_construct_checkout_url_no_apps_installed() {
@@ -32,7 +32,7 @@ final class ConstructCheckoutUrlTest: XCTestCase {
 
         let expectedEncodedPaymentOptions = """
         eyJhcHBSZXR1cm5VcmwiOiJiYW1ib3JhZGVtb2FwcDovL2JhbWJvcmFzZGsvcmV0dXJuIiwicGF5bWVudEFwcHNJbnN0YW\
-        xsZWQiOltdLCJ2ZXJzaW9uIjoiQ2hlY2tvdXRTREtpT1MvMi4wLjAifQ==
+        xsZWQiOltdLCJ2ZXJzaW9uIjoiQ2hlY2tvdXRTREtpT1MvMi4wLjEifQ==
         """
         let expectedCheckoutUrl = "\(baseUrl)/\(sessionToken)?ui=inline#\(expectedEncodedPaymentOptions)"
 
@@ -44,7 +44,7 @@ final class ConstructCheckoutUrlTest: XCTestCase {
 
         let expectedEncodedPaymentOptions = """
         eyJhcHBSZXR1cm5VcmwiOiJiYW1ib3JhZGVtb2FwcDovL2JhbWJvcmFzZGsvcmV0dXJuIiwicGF5bWVudEFwcHNJbnN0YW\
-        xsZWQiOlsibW9iaWxlcGF5Il0sInZlcnNpb24iOiJDaGVja291dFNES2lPUy8yLjAuMCJ9
+        xsZWQiOlsibW9iaWxlcGF5Il0sInZlcnNpb24iOiJDaGVja291dFNES2lPUy8yLjAuMSJ9
         """
         let expectedCheckoutUrl = "\(baseUrl)/\(sessionToken)?ui=inline#\(expectedEncodedPaymentOptions)"
 
@@ -56,7 +56,7 @@ final class ConstructCheckoutUrlTest: XCTestCase {
 
         let expectedEncodedPaymentOptions = """
         eyJhcHBSZXR1cm5VcmwiOiJiYW1ib3JhZGVtb2FwcDovL2JhbWJvcmFzZGsvcmV0dXJuIiwicGF5bWVudEFwcHNJbnN0YW\
-        xsZWQiOlsidmlwcHMiXSwidmVyc2lvbiI6IkNoZWNrb3V0U0RLaU9TLzIuMC4wIn0=
+        xsZWQiOlsidmlwcHMiXSwidmVyc2lvbiI6IkNoZWNrb3V0U0RLaU9TLzIuMC4xIn0=
         """
         let expectedCheckoutUrl = "\(baseUrl)/\(sessionToken)?ui=inline#\(expectedEncodedPaymentOptions)"
 
@@ -68,7 +68,7 @@ final class ConstructCheckoutUrlTest: XCTestCase {
 
         let expectedEncodedPaymentOptions = """
         eyJhcHBSZXR1cm5VcmwiOiJiYW1ib3JhZGVtb2FwcDovL2JhbWJvcmFzZGsvcmV0dXJuIiwicGF5bWVudEFwcHNJbnN0YW\
-        xsZWQiOlsic3dpc2giXSwidmVyc2lvbiI6IkNoZWNrb3V0U0RLaU9TLzIuMC4wIn0=
+        xsZWQiOlsic3dpc2giXSwidmVyc2lvbiI6IkNoZWNrb3V0U0RLaU9TLzIuMC4xIn0=
         """
         let expectedCheckoutUrl = "\(baseUrl)/\(sessionToken)?ui=inline#\(expectedEncodedPaymentOptions)"
 
@@ -80,7 +80,7 @@ final class ConstructCheckoutUrlTest: XCTestCase {
 
         let expectedEncodedPaymentOptions = """
         eyJhcHBSZXR1cm5VcmwiOiJiYW1ib3JhZGVtb2FwcDovL2JhbWJvcmFzZGsvcmV0dXJuIiwicGF5bWVudEFwcHNJbnN0YW\
-        xsZWQiOlsibW9iaWxlcGF5IiwidmlwcHMiLCJzd2lzaCJdLCJ2ZXJzaW9uIjoiQ2hlY2tvdXRTREtpT1MvMi4wLjAifQ==
+        xsZWQiOlsibW9iaWxlcGF5IiwidmlwcHMiLCJzd2lzaCJdLCJ2ZXJzaW9uIjoiQ2hlY2tvdXRTREtpT1MvMi4wLjEifQ==
         """
         let expectedCheckoutUrl = "\(baseUrl)/\(sessionToken)?ui=inline#\(expectedEncodedPaymentOptions)"
 

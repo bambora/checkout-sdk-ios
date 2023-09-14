@@ -73,7 +73,8 @@ internal class BamboraCheckoutViewController: UIViewController {
      Otherwise it initializes the Checkout WebView.
      */
     func show() {
-        if var topController = UIApplication.shared.windows.filter({$0.isKeyWindow}).first?.rootViewController {
+        if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+           var topController = windowScene.windows.filter({$0.isKeyWindow}).first?.rootViewController {
             while let presentedViewController = topController.presentedViewController {
                 topController = presentedViewController
             }

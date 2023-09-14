@@ -26,7 +26,7 @@ final class CheckoutTest: XCTestCase {
 
     private var defaultCheckout: Checkout?
 
-    private let sessionToken = "369b2892a3c44a5699d557a37c4a78a6"
+    private let sessionToken = UUID().uuidString
 
     private let eventsToSubscribe = [
         EventType.authorize,
@@ -63,7 +63,7 @@ final class CheckoutTest: XCTestCase {
 
         let expectedEncodedPaymentOptions =
             """
-            eyJhcHBSZXR1cm5VcmwiOiIiLCJwYXltZW50QXBwc0luc3RhbGxlZCI6W10sInZlcnNpb24iOiJDaGVja291dFNES2lPUy8yLjAuMCJ9
+            eyJhcHBSZXR1cm5VcmwiOiIiLCJwYXltZW50QXBwc0luc3RhbGxlZCI6W10sInZlcnNpb24iOiJDaGVja291dFNES2lPUy8yLjAuMSJ9
             """
         let expectedCheckoutUrl =
             "\(BamboraConstants.productionURL)/\(sessionToken)?ui=inline#\(expectedEncodedPaymentOptions)"

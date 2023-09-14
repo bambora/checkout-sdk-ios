@@ -1,4 +1,4 @@
-// swift-tools-version:5.3
+// swift-tools-version:5.5
 //
 // Copyright (c) 2022 Bambora ( https://bambora.com/ )
 //
@@ -26,7 +26,7 @@ import PackageDescription
 let package = Package(
     name: "BamboraCheckoutSDK",
     platforms: [
-        .iOS(.v14)
+        .iOS(.v15)
     ],
     products: [
         .library(
