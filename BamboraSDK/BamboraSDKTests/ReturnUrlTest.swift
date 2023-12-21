@@ -22,11 +22,11 @@
 @testable import BamboraSDK
 import XCTest
 
-final class EpayReturnUrlTest: XCTestCase {
+final class ReturnUrlTest: XCTestCase {
 
-    func test_get_epayreturnurl_success() {
+    func test_get_returnurl_success() {
         let deeplinkString = """
-            bamborademoapp://bamborasdk/return/return?epayreturn=https://wallet-v1.api.epay.eu/allowed/domain
+            bamborademoapp://bamborasdk/return/return?epayreturn=https://wallet-v1.api-eu.bambora.com/allowed/domain
         """.trimmingCharacters(in: .whitespacesAndNewlines)
 
         guard let deeplinkUrl = URL(string: deeplinkString) else {
@@ -34,17 +34,16 @@ final class EpayReturnUrlTest: XCTestCase {
             return
         }
 
-        let epayReturnUrl = DeepLinkValidator.processDeeplink(url: deeplinkUrl)
+        let returnUrl = DeepLinkValidator.processDeeplink(url: deeplinkUrl)
 
-        XCTAssertNotNil(epayReturnUrl)
-        XCTAssertEqual(epayReturnUrl?.absoluteString, "https://wallet-v1.api.epay.eu/allowed/domain")
+        XCTAssertNotNil(returnUrl)
+        XCTAssertEqual(returnUrl?.absoluteString, "https://wallet-v1.api-eu.bambora.com/allowed/domain")
     }
-
-    func test_get_epayreturnurl_fail() {
+    
+    func test_get_returnurl_fail() {
         let deeplinkStringWrongValue = "bamborademoapp://bamborasdk/return/return?epayreturn?wrongvalue"
-        let deeplinkStringWrongDomain = """
-            bamborademoapp://bamborasdk/return/return?epayreturn=https://not-allowed-domain.eu
-        """.trimmingCharacters(in: .whitespacesAndNewlines)
+        let deeplinkStringWrongDomain = "bamborademoapp://bamborasdk/return/return?epayreturn=https://example.com"
+            .trimmingCharacters(in: .whitespacesAndNewlines)
 
         guard let deeplinkUrlWrongValue = URL(string: deeplinkStringWrongValue),
               let deeplinkUrlWrongDomain = URL(string: deeplinkStringWrongDomain) else {
@@ -52,10 +51,10 @@ final class EpayReturnUrlTest: XCTestCase {
             return
         }
 
-        let epayReturnUrlWrongValue = DeepLinkValidator.processDeeplink(url: deeplinkUrlWrongValue)
-        let epayReturnUrlWrongDomain = DeepLinkValidator.processDeeplink(url: deeplinkUrlWrongDomain)
+        let returnUrlWrongValue = DeepLinkValidator.processDeeplink(url: deeplinkUrlWrongValue)
+        let returnUrlWrongDomain = DeepLinkValidator.processDeeplink(url: deeplinkUrlWrongDomain)
 
-        XCTAssertNil(epayReturnUrlWrongValue)
-        XCTAssertNil(epayReturnUrlWrongDomain)
+        XCTAssertNil(returnUrlWrongValue)
+        XCTAssertNil(returnUrlWrongDomain)
     }
 }

@@ -63,7 +63,7 @@ final class CheckoutTest: XCTestCase {
 
         let expectedEncodedPaymentOptions =
             """
-            eyJhcHBSZXR1cm5VcmwiOiIiLCJwYXltZW50QXBwc0luc3RhbGxlZCI6W10sInZlcnNpb24iOiJDaGVja291dFNES2lPUy8yLjAuMSJ9
+            eyJhcHBSZXR1cm5VcmwiOiIiLCJwYXltZW50QXBwc0luc3RhbGxlZCI6W10sInZlcnNpb24iOiJDaGVja291dFNES2lPUy8yLjAuMiJ9
             """
         let expectedCheckoutUrl =
             "\(BamboraConstants.productionURL)/\(sessionToken)?ui=inline#\(expectedEncodedPaymentOptions)"

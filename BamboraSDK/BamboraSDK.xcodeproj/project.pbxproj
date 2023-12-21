@@ -16,7 +16,7 @@
 		7BF09CB829140196007E1EDA /* CheckoutTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF09CB729140196007E1EDA /* CheckoutTest.swift */; };
 		7BF09CB929140196007E1EDA /* BamboraSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F605AB9A28350D0100CB5679 /* BamboraSDK.framework */; };
 		7BF09CC029140276007E1EDA /* BamboraConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF09CBF29140276007E1EDA /* BamboraConstants.swift */; };
-		7BF6A6422A43268800F73A2E /* EpayReturnUrlTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF6A6412A43268800F73A2E /* EpayReturnUrlTest.swift */; };
+		7BF6A6422A43268800F73A2E /* ReturnUrlTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF6A6412A43268800F73A2E /* ReturnUrlTest.swift */; };
 		F605ABC2283517B900CB5679 /* Checkout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F605ABC1283517B900CB5679 /* Checkout.swift */; };
 		F605ABC42835181600CB5679 /* Bambora.swift in Sources */ = {isa = PBXBuildFile; fileRef = F605ABC32835181600CB5679 /* Bambora.swift */; };
 		F605ABCA2835214C00CB5679 /* CheckoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F605ABC92835214C00CB5679 /* CheckoutView.swift */; };
@@ -53,7 +53,7 @@
 		7BF09CB529140196007E1EDA /* BamboraSDKTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BamboraSDKTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BF09CB729140196007E1EDA /* CheckoutTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutTest.swift; sourceTree = "<group>"; };
 		7BF09CBF29140276007E1EDA /* BamboraConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BamboraConstants.swift; sourceTree = "<group>"; };
-		7BF6A6412A43268800F73A2E /* EpayReturnUrlTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpayReturnUrlTest.swift; sourceTree = "<group>"; };
+		7BF6A6412A43268800F73A2E /* ReturnUrlTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReturnUrlTest.swift; sourceTree = "<group>"; };
 		F605AB9A28350D0100CB5679 /* BamboraSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BamboraSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F605ABC1283517B900CB5679 /* Checkout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checkout.swift; sourceTree = "<group>"; };
 		F605ABC32835181600CB5679 /* Bambora.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bambora.swift; sourceTree = "<group>"; };
@@ -103,7 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				7BF09CB729140196007E1EDA /* CheckoutTest.swift */,
-				7BF6A6412A43268800F73A2E /* EpayReturnUrlTest.swift */,
+				7BF6A6412A43268800F73A2E /* ReturnUrlTest.swift */,
 				7BD57EF6291E5AF5002E783C /* isAllowedDomainTest.swift */,
 				7BC68D7A292E1EF600368883 /* AuthorizeDecoderTest.swift */,
 				7BEC37E42975AA9E007499BA /* ConstructCheckoutUrlTest.swift */,
@@ -289,7 +289,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7BD57EF7291E5AF5002E783C /* isAllowedDomainTest.swift in Sources */,
-				7BF6A6422A43268800F73A2E /* EpayReturnUrlTest.swift in Sources */,
+				7BF6A6422A43268800F73A2E /* ReturnUrlTest.swift in Sources */,
 				7BF09CB829140196007E1EDA /* CheckoutTest.swift in Sources */,
 				7BC68D7B292E1EF600368883 /* AuthorizeDecoderTest.swift in Sources */,
 				7BEC37E52975AA9E007499BA /* ConstructCheckoutUrlTest.swift in Sources */,

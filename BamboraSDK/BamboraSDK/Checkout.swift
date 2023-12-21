@@ -69,12 +69,12 @@ public final class Checkout: NSObject {
         }
     }
 
-    internal init(epayReturnUrl: URL) throws {
-        self.checkoutUrl = epayReturnUrl
+    internal init(returnUrl: URL) throws {
+        self.checkoutUrl = returnUrl
     }
 
-    internal func setEpayReturnUrl(_ epayReturnUrl: URL) throws {
-        self.checkoutUrl = epayReturnUrl
+    internal func setCheckoutUrlAfterReturn(with returnUrl: URL) throws {
+        self.checkoutUrl = returnUrl
     }
 
     /**
@@ -165,7 +165,7 @@ public final class Checkout: NSObject {
     private enum Constants {
         static let webViewParameter = "?ui=inline#"
         static let identifier = "CheckoutSDKiOS/"
-        static let version = "2.0.2"
+        static let version = "2.0.3"
     }
 
     internal static func constructCheckoutUrl(

@@ -32,7 +32,7 @@ final class ConstructCheckoutUrlTest: XCTestCase {
 
         let expectedEncodedPaymentOptions = """
         eyJhcHBSZXR1cm5VcmwiOiJiYW1ib3JhZGVtb2FwcDovL2JhbWJvcmFzZGsvcmV0dXJuIiwicGF5bWVudEFwcHNJbnN0YW\
-        xsZWQiOltdLCJ2ZXJzaW9uIjoiQ2hlY2tvdXRTREtpT1MvMi4wLjEifQ==
+        xsZWQiOltdLCJ2ZXJzaW9uIjoiQ2hlY2tvdXRTREtpT1MvMi4wLjIifQ==
         """
         let expectedCheckoutUrl = "\(baseUrl)/\(sessionToken)?ui=inline#\(expectedEncodedPaymentOptions)"
 
@@ -44,7 +44,7 @@ final class ConstructCheckoutUrlTest: XCTestCase {
 
         let expectedEncodedPaymentOptions = """
         eyJhcHBSZXR1cm5VcmwiOiJiYW1ib3JhZGVtb2FwcDovL2JhbWJvcmFzZGsvcmV0dXJuIiwicGF5bWVudEFwcHNJbnN0YW\
-        xsZWQiOlsibW9iaWxlcGF5Il0sInZlcnNpb24iOiJDaGVja291dFNES2lPUy8yLjAuMSJ9
+        xsZWQiOlsibW9iaWxlcGF5Il0sInZlcnNpb24iOiJDaGVja291dFNES2lPUy8yLjAuMiJ9
         """
         let expectedCheckoutUrl = "\(baseUrl)/\(sessionToken)?ui=inline#\(expectedEncodedPaymentOptions)"
 
@@ -56,7 +56,7 @@ final class ConstructCheckoutUrlTest: XCTestCase {
 
         let expectedEncodedPaymentOptions = """
         eyJhcHBSZXR1cm5VcmwiOiJiYW1ib3JhZGVtb2FwcDovL2JhbWJvcmFzZGsvcmV0dXJuIiwicGF5bWVudEFwcHNJbnN0YW\
-        xsZWQiOlsidmlwcHMiXSwidmVyc2lvbiI6IkNoZWNrb3V0U0RLaU9TLzIuMC4xIn0=
+        xsZWQiOlsidmlwcHMiXSwidmVyc2lvbiI6IkNoZWNrb3V0U0RLaU9TLzIuMC4yIn0=
         """
         let expectedCheckoutUrl = "\(baseUrl)/\(sessionToken)?ui=inline#\(expectedEncodedPaymentOptions)"
 
@@ -68,7 +68,7 @@ final class ConstructCheckoutUrlTest: XCTestCase {
 
         let expectedEncodedPaymentOptions = """
         eyJhcHBSZXR1cm5VcmwiOiJiYW1ib3JhZGVtb2FwcDovL2JhbWJvcmFzZGsvcmV0dXJuIiwicGF5bWVudEFwcHNJbnN0YW\
-        xsZWQiOlsic3dpc2giXSwidmVyc2lvbiI6IkNoZWNrb3V0U0RLaU9TLzIuMC4xIn0=
+        xsZWQiOlsic3dpc2giXSwidmVyc2lvbiI6IkNoZWNrb3V0U0RLaU9TLzIuMC4yIn0=
         """
         let expectedCheckoutUrl = "\(baseUrl)/\(sessionToken)?ui=inline#\(expectedEncodedPaymentOptions)"
 
@@ -80,7 +80,7 @@ final class ConstructCheckoutUrlTest: XCTestCase {
 
         let expectedEncodedPaymentOptions = """
         eyJhcHBSZXR1cm5VcmwiOiJiYW1ib3JhZGVtb2FwcDovL2JhbWJvcmFzZGsvcmV0dXJuIiwicGF5bWVudEFwcHNJbnN0YW\
-        xsZWQiOlsibW9iaWxlcGF5IiwidmlwcHMiLCJzd2lzaCJdLCJ2ZXJzaW9uIjoiQ2hlY2tvdXRTREtpT1MvMi4wLjEifQ==
+        xsZWQiOlsibW9iaWxlcGF5IiwidmlwcHMiLCJzd2lzaCJdLCJ2ZXJzaW9uIjoiQ2hlY2tvdXRTREtpT1MvMi4wLjIifQ==
         """
         let expectedCheckoutUrl = "\(baseUrl)/\(sessionToken)?ui=inline#\(expectedEncodedPaymentOptions)"
 

@@ -72,14 +72,14 @@ public struct Bambora {
      - Returns: An instance of Checkout, use this instance to interact with the Checkout.
      */
     public static func checkoutAfterReturn(with url: URL) throws -> Checkout {
-        guard let epayReturnUrl = DeepLinkValidator.processDeeplink(url: url) else {
+        guard let returnUrl = DeepLinkValidator.processDeeplink(url: url) else {
             throw BamboraError.genericError
         }
 
         if isInitialized {
-            try checkout?.setEpayReturnUrl(epayReturnUrl)
+            try checkout?.setCheckoutUrlAfterReturn(with: returnUrl)
         } else {
-            checkout = try Checkout(epayReturnUrl: epayReturnUrl)
+            checkout = try Checkout(returnUrl: returnUrl)
         }
 
         guard let checkout else {

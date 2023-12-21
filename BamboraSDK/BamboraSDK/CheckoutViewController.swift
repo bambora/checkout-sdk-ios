@@ -69,7 +69,7 @@ internal class BamboraCheckoutViewController: UIViewController {
 
     /**
      Shows the ViewController on top of the host app.
-     If the epayReturnUrlString is provided, it opens that URL.
+     If the returnUrlString is provided, it opens that URL.
      Otherwise it initializes the Checkout WebView.
      */
     func show() {

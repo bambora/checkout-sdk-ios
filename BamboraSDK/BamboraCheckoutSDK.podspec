@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
 
   spec.name          = "BamboraCheckoutSDK"
-  spec.version       = "2.0.2"
+  spec.version       = "2.0.3"
   spec.summary       = <<-DESC
                      This native iOS SDK facilitates handling payments in your apps
                      using the Bambora platform.
@@ -14,5 +14,5 @@ Pod::Spec.new do |spec|
   spec.module_name   = "BamboraSDK"
   spec.source        = { :git => "https://github.com/bambora/checkout-sdk-ios.git", :tag => spec.version }
   spec.swift_version = "5"
-  spec.source_files = "BamboraSDK/BamboraSDK/*.swift", "BamboraSDK/BamboraSDK/**/*.swift"
+  spec.source_files = "BamboraSDK/BamboraSDK/*.swift", "BamboraSDK/BamboraSDK/Extensions/*.swift"
 end
